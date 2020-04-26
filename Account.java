@@ -1,0 +1,47 @@
+public class Account {
+    private String accountNumber;
+    private String accountHolder;
+    private String openDate;
+    private Double balance;
+    
+    public Account(String accnumber, String accHolder, String openDate, Double balance)
+    {
+        this.accountNumber= accnumber;
+        this.accountHolder=accHolder;
+        this.openDate=openDate;
+        this.balance=balance;
+    }
+    
+    public void withdraw(double amount)
+    {
+        this.balance= this.balance-amount;
+    }
+    
+    public void deposit(Double amount)
+    {
+        this.balance= this.balance+amount;
+    }
+    public void transfer(Account a, double amount)
+    {
+        this.withdraw(amount);
+        a.deposit(amount);
+    }
+    public String getAccountHolder()
+    {
+        return this.accountHolder;
+    }
+    public String getOpenDate()
+    {
+        return this.openDate;
+    }
+    public Double getBalance()
+    {
+        return this.balance;
+    }
+    @Override
+    public String toString()
+    {
+        return this.accountNumber;
+    }
+}
+
